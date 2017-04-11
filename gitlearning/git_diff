@@ -4,3 +4,13 @@ git diff
 git diff --cached
 
 # 比较add 之后的 stage  和  commit 之后的 master
+
+hello:          工作区hello          缓存区空
+
+hello world:    工作区hello world    缓存区空
+
+git add:         工作区hello world    缓存区helloword
+
+hello world123: 工作区hello world123 缓存区helloword
+
+git commit:     工作区hello world123 缓存区helloword 提交到git helloword
