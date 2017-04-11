@@ -21,6 +21,43 @@ Deleted branch dev (was f44f83c).
 [root@aliyun gitlearning]# git branch
 * master
 
+#解决合并冲突
+[root@aliyun TEST]# git branch
+  feature1
+  * master
+  [root@aliyun TEST]# 
+  [root@aliyun TEST]# 
+  [root@aliyun TEST]# git merge feature1
+  Auto-merging README.md
+  CONFLICT (content): Merge conflict in README.md
+  Automatic merge failed; fix conflicts and then commit the result.
+  [root@aliyun TEST]# git status
+  # On branch master
+  # Unmerged paths:
+  #   (use "git add/rm <file>..." as appropriate to mark resolution)
+  #
+  #       both modified:      README.md
+  #
+  no changes added to commit (use "git add" and/or "git commit -a")
+  [root@aliyun TEST]# cat README.md 
+  # TEST
+  add one
+  add two
+
+  git commit exercise
+  Git is a distributed version control system.
+  Git is free software distributed under the GPL.
+  Git is free software distributed under the GPL.
+  Git tracks changes of files.
+  <<<<<<< HEAD
+  Add simple example
+  =======
+  exercise for git conflict
+  >>>>>>> feature1
+
+#根据提示修改冲突文件 合并冲突
+
+
 branch 相关命令
 git branch
 git branch <name>

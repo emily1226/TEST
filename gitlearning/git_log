@@ -1,0 +1,70 @@
+# 查看commit
+[root@aliyun TEST]# git log
+commit 8e56f17fbd19087206bc0a9aaa8b818b0dcf32a2
+Merge: d051353 66a3f75
+Author: emily1226 <kanghui1226@163.com>
+Date:   Tue Apr 11 17:24:02 2017 +0800
+
+  conflict fixed
+
+commit d0513535f9bb55382f3cd0d235d1a2c702bf2c55
+Author: emily1226 <kanghui1226@163.com>
+Date:   Tue Apr 11 17:16:43 2017 +0800
+
+    add simple examle
+
+commit 66a3f75cdd7b3ca259844e3b8620726ce26d09e7
+Author: emily1226 <kanghui1226@163.com>
+Date:   Tue Apr 11 17:14:45 2017 +0800
+
+    AND exercise conflict
+
+[root@aliyun TEST]# git log --pretty=oneline
+8e56f17fbd19087206bc0a9aaa8b818b0dcf32a2 conflict fixed
+d0513535f9bb55382f3cd0d235d1a2c702bf2c55 add simple examle
+66a3f75cdd7b3ca259844e3b8620726ce26d09e7 AND exercise conflict
+93c5f2bfa01fec04f61cb893596a834f11e738d3 modify git_branch
+f44f83c5eec74558d769d950730d8f1ec7879505 add git_branch
+3d9239211bb3a3ccafb5635ac85754fba755e10c remote text.txt
+90b5a7147307b7a46d8bb2cc9fb39bf932cb795e add test.txt
+8247fa69a973303cbb1e65c85b69455850e4b8bd add git checkout
+b14dc1cce6def901d3e73591d20d16dfa1a770f8 add hello world to understand dict&stage
+d1685ca2f93520e910aae2d4548b1ca970035673 change git_diff
+82a35bcddaeaa8cb1298c94aa09694e73ada5488 test add not commit with different file
+417f8f6012cfc46604bcdf74cd039f365e747e5d git tracks changes
+b27c536b17a33dc2656fc5888fc5382172ec0439 add git_diff
+dde0e762538084a1f09b548a9dba45e3f4408037 add to README
+dd9d88363325c759cbed3ac7f941fa7d30ce614b change README
+9dd2779a6513ff59bf260e31f01e1fa8d9a4627d Merge branch 'master' of https://github.com/emily1226/TEST
+aadb65008978af5ebbad60f8cc8d3ef016805a95 change README.md
+38d2ce5e97c7398fb834fba8f61d6ae67b4b8176 append readme
+1b5c2f4c36480bba89fc8cf9863d352efd4279e2 add directory
+24425678f8262b820a35a68279988624b361b4c7 add README.md
+
+#查看分支合并图 git log --graph
+[root@aliyun TEST]# git log --graph --pretty=oneline --abbrev-commit
+*   8e56f17 conflict fixed
+|\  
+| * 66a3f75 AND exercise conflict
+* | d051353 add simple examle
+|/  
+* 93c5f2b modify git_branch
+* f44f83c add git_branch
+* 3d92392 remote text.txt
+* 90b5a71 add test.txt
+* 8247fa6 add git checkout
+* b14dc1c add hello world to understand dict&stage
+* d1685ca change git_diff
+* 82a35bc test add not commit with different file
+* 417f8f6 git tracks changes
+* b27c536 add git_diff
+* dde0e76 add to README
+* dd9d883 change README
+*   9dd2779 Merge branch 'master' of https://github.com/emily1226/TEST
+|\  
+| * 38d2ce5 append readme
+* | aadb650 change README.md
+|/  
+* 1b5c2f4 add directory
+* 2442567 add README.md
+
