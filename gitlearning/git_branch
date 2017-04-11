@@ -6,3 +6,25 @@ Switched to a new branch 'dev'
 * dev
   master
 
+#将dev 合并至 master
+[root@aliyun TEST]# git merge dev
+Updating 3d92392..f44f83c
+Fast-forward
+gitlearning/git_branch |    8 ++++++++
+1 files changed, 8 insertions(+), 0 deletions(-)
+create mode 100644 gitlearning/git_branch
+[root@aliyun TEST]# cd gitlearning/
+
+#合并后删除分支
+[root@aliyun gitlearning]# git branch -d dev
+Deleted branch dev (was f44f83c).
+[root@aliyun gitlearning]# git branch
+* master
+
+branch 相关命令
+git branch
+git branch <name>
+git checkout <name>
+git checkout -b <name>
+git merge <name>
+git branch -d <name>
