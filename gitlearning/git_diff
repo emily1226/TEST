@@ -2,3 +2,5 @@
 git diff 
 # the diff between stage and branch(master)
 git diff --cached
+
+# 比较add 之后的 stage  和  commit 之后的 master
