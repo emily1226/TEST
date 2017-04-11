@@ -1,0 +1,4 @@
+# the diff between work dict and stage
+git diff 
+# the diff between stage and branch(master)
+git diff --cached
