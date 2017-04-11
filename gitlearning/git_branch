@@ -1,0 +1,8 @@
+#create new brach and switch to the new branch
+[root@aliyun TEST]# git checkout -b dev
+Switched to a new branch 'dev'
+#查看当前分支
+[root@aliyun TEST]# git branch
+* dev
+  master
+
