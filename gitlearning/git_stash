@@ -1,0 +1,46 @@
+
+1：在  dev 下正常开发中，说有1个bug要解决，首先我需要把dev分支封存stash
+
+2：在master下新建一个issue-101分支，解决bug，成功后
+
+3：在master下合并issue-101
+
+4：在 dev  下合并master，  这样才同步了里面的bug解决方案
+
+5：解开dev封印stash pop，系统自动合并 & 提示有冲突，因为封存前dev写了东西，此时去文件里手动改冲突
+
+6：继续开发dev，最后add，commit
+
+7：在master下合并最后完成的dev
+
+代码过程如下：
+
+```
+在此插入代码
+
+1： $ git stash
+
+2： $ git checkout master
+    $ git checkout -b issue-101
+    //去文件里修bug
+    $ git add README.md
+    $ git commit -m "fix-issue-101"
+
+3： $ git checkout master
+    $ git merge --no-ff -m "m-merge-issue-101" issue-101
+    $ git branch -d issue-101
+
+4： $ git checkout dev
+    $ git merge --no-ff -m "dev-merge-m" master
+
+5： $ git stash pop
+    //提示冲突，去文件手动改正
+    Auto-merging README.md
+    CONFLICT (content): Merge conflict in README.md
+6： //继续开发 ... ... ，完成后一并提交
+    $ git add README.md
+    $ git commit -m "fixconflict & append something"
+
+7： $ git checkout master
+    $ git merge --no-ff -m "m-merge-dev" dev
+    $ git branch -d dev
