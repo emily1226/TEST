@@ -95,3 +95,4 @@ git checkout -b <name>
 git merge <name>
 git branch -d <name>
 git branch -D <name>
+git branch --set-upstream <name> origin/<name>
