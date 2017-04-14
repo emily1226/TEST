@@ -68,3 +68,35 @@ aadb65008978af5ebbad60f8cc8d3ef016805a95 change README.md
 * 1b5c2f4 add directory
 * 2442567 add README.md
 
+##常用的git log 命令
+
+#使用默认格式显示完整地项目历史。如果输出超过一屏，你可以用空格键来滚动，按q退出。
+git log
+
+#用<limit>限制提交的数量。比如git log -n 3只会显示3个提交
+git log -n <limit>
+
+#将每个提交压缩到一行。当你需要查看项目历史的上层情况时这会很有用
+git log --oneline
+
+#除了git log信息之外，包含哪些文件被更改了，以及每个文件相对的增删行数
+git log --stat
+
+#显示代表每个提交的一堆信息。显示每个提交全部的差异(diff)，这也是项目历史中最详细的视图
+git log -p
+
+#搜索特定作者的提交。<pattern>可以是字符串或正则表达式
+git log --author="<pattern>"
+
+#搜索提交信息匹配特定<pattern>的提交。<pattern>可以是字符串或正则表达式
+git log --grep="<pattern>"
+
+#只显示发生在<since>和<until>之间的提交。两个参数可以是提交ID、分支名、HEAD或是任何一种引用。
+git log <since>..<until>
+
+#只显示包含特定文件的提交。查找特定文件的历史这样做会很方便
+git log <file>
+
+#--graph 绘制图形  --decorate 标记分支和标签 --oneline 显示在同一行
+git log --graph --decorate --oneline
+
