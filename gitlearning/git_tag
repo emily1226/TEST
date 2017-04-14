@@ -63,6 +63,15 @@ error: gpg failed to sign the tag
 error: unable to sign the tag
 
 #git tag 常用操作
+#推送本地标签
+git push origin <name>
+#推送所有本地标签
+git push origin --tags
+#删除本地tag
+git tag -d <name>
+#删除远程tag
+git push origin :refs/tags/<name> 
+
 
 
 
