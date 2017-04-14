@@ -23,6 +23,21 @@ Action
                           find the color setting: [stdout-is-tty]    
 #配置git带颜色的显示
 git config --global color.ui true
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
 
+#配置git alias
+git config --global alias.st status
 
+git config --global alias.co checkout
+
+git config --global alias.ct commit
+
+git config --global alias.df diff
+
+git config --global alias.br branch
+
+#配置git 编辑器设置
+git config --global core.editor vim
 
