@@ -1,0 +1,25 @@
+# git工作区下创建一个 .gitignore 文件，添加需要忽略的文件名，git就会自动忽略这些文件
+# git提供的模板 https://github.com/github/gitignore
+
+#加入.gitignore 文件之后 git status 就看不到该文件的状态了
+#被.gitignore 忽略的文件 git add 时会报错
+[root@aliyun TEST]# git add css.php 
+The following paths are ignored by one of your .gitignore files:
+css.php
+Use -f if you really want to add them.
+fatal: no files added
+
+#如果要加入该文件 可以使用 -f 强制添加
+
+[root@aliyun TEST]# git add -f css.php 
+[root@aliyun TEST]# git status
+# On branch dev
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   .gitignore
+#       new file:   css.php
+#       new file:   gitlearning/git_gitignore
+#
+
+
