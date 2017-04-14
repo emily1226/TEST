@@ -1,0 +1,70 @@
+#tag 用于版本发布回退存档等版本相关
+#相比用commit 一长串的符号 tag 更直观清晰
+
+#git tag <name> 创建标签
+[root@aliyun TEST]#  git tag v1.0
+#git tag 查看标签
+[root@aliyun TEST]# git tag
+v1.0
+
+#在历史commit 上创建tag
+#查看commit历史
+[root@aliyun TEST]# git log --pretty=oneline --abbrev-commit
+aa0f1f0 fix conflict with dev
+d012f21 add git_stash
+eb1d22c merged bug fix 01
+205dfd1 fix bug 01
+2f04a81 add git_log
+8e56f17 conflict fixed
+d051353 add simple examle
+66a3f75 AND exercise conflict
+93c5f2b modify git_branch
+
+[root@aliyun TEST]# git tag v0.8 3d92392
+[root@aliyun TEST]# git tag
+v0.8
+v1.0
+[root@aliyun TEST]# git show v0.8
+commit 3d9239211bb3a3ccafb5635ac85754fba755e10c
+Author: emily1226 <kanghui1226@163.com>
+Date:   Tue Apr 11 15:57:01 2017 +0800
+
+    remote text.txt
+
+diff --git a/gitlearning/test.txt b/gitlearning/test.txt
+deleted file mode 100644
+index e69de29..0000000
+
+#tag 加说明
+#git tag -a <name> -m "<XXXX>" <commitid>
+[root@aliyun TEST]# git tag -a v0.1 -m "version 0.1 released" 9dd2779
+[root@aliyun TEST]# git tag
+v0.1
+v0.8
+v1.0
+[root@aliyun TEST]# git show v0.1
+tag v0.1
+Tagger: emily1226 <kanghui1226@163.com>
+Date:   Thu Apr 13 15:06:26 2017 +0800
+
+    Merge branch 'master' of https://github.com/emily1226/TEST
+
+#tag 可以添加带签名的标签
+#需要本地配置gpg 私钥 不然报错
+[root@aliyun TEST]# git tag -s v0.2 -m "signature version 0.2 released"  3d92392
+gpg: directory `/root/.gnupg' created
+gpg: new configuration file `/root/.gnupg/gpg.conf' created
+gpg: WARNING: options in `/root/.gnupg/gpg.conf' are not yet active during this run
+gpg: keyring `/root/.gnupg/secring.gpg' created
+gpg: keyring `/root/.gnupg/pubring.gpg' created
+gpg: skipped "emily1226 <kanghui1226@163.com>": No secret key
+gpg: signing failed: No secret key
+error: gpg failed to sign the tag
+error: unable to sign the tag
+
+#git tag 常用操作
+
+
+
+
+
