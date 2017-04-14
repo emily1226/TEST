@@ -1,6 +1,7 @@
 #create new brach and switch to the new branch
 [root@aliyun TEST]# git checkout -b dev
 Switched to a new branch 'dev'
+
 #查看当前分支
 [root@aliyun TEST]# git branch
 * dev
@@ -39,6 +40,8 @@ Deleted branch dev (was f44f83c).
   #       both modified:      README.md
   #
   no changes added to commit (use "git add" and/or "git commit -a")
+
+#根据提示修改冲突文件 合并冲突
   [root@aliyun TEST]# cat README.md 
   # TEST
   add one
@@ -55,7 +58,33 @@ Deleted branch dev (was f44f83c).
   exercise for git conflict
   >>>>>>> feature1
 
-#根据提示修改冲突文件 合并冲突
+# 分支合并前删除 git会提示报错，可强制删除
+[root@aliyun TEST]# git add test 
+[root@aliyun TEST]# git status
+# On branch feature-test
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   test
+#
+[root@aliyun TEST]# git commit -m "add feature test"
+[feature-test 835b4c2] add feature test
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+  create mode 100644 test
+  [root@aliyun TEST]# git checkout dev
+  Switched to branch 'dev'
+  [root@aliyun TEST]# git branch -d feature-test
+  error: The branch 'feature-test' is not fully merged.
+  If you are sure you want to delete it, run 'git branch -D feature-test'.
+  [root@aliyun TEST]# 
+  [root@aliyun TEST]# git branch -D feature-test
+  Deleted branch feature-test (was 835b4c2).
+  [root@aliyun TEST]# git branch 
+  * dev
+  feature1
+  master
+
+
 
 
 branch 相关命令
@@ -65,3 +94,5 @@ git checkout <name>
 git checkout -b <name>
 git merge <name>
 git branch -d <name>
+git branch -D <name>
+git branch --set-upstream <name> origin/<name>
